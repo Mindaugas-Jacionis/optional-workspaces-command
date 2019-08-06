@@ -1,0 +1,26 @@
+{
+  "name": "optional-workspaces-command",
+  "version": "0.0.0",
+  "description": "Optionally runs command in monorepo workspace directory",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yarn",
+    "script",
+    "conditional",
+    "workspaces",
+    "monorepo"
+  ],
+  "bin": {
+    "optional-workspace-command": "./index.js"
+  },
+  "author": "Mindaugas Jačionis",
+  "license": "MIT",
+  "dependencies": {
+    "command-exists": "^1.2.8",
+    "fs-extra": "^8.1.0",
+    "shelljs": "^0.8.3",
+    "yargs": "^13.3.0"
+  }
+}
