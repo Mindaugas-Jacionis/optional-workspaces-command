@@ -17,8 +17,8 @@ if (!command) {
 
 console.log(`Starting optionaly run "${command}" command for all workspaces in ${directory} 🏎️`);
 
-const PACKAGES_DIR_PATH = path.resolve(__dirname, directory);
-const packages = fs.readdirSync(PACKAGES_DIR_PATH);
+const WORKING_DIR = path.resolve('./');
+const packages = fs.readdirSync(directory);
 
 // checks if directory has package.json and needed command | returns true/false
 const hasCommand = dir => {
@@ -35,12 +35,13 @@ const hasCommand = dir => {
 // iterates over every file/dir in provided directory
 // optionally runs provided command from package.json
 packages.forEach(pkg => {
-  const fullPath = path.resolve(__dirname, `${directory}/${pkg}`);
+  const fullPath = path.resolve(WORKING_DIR, directory, pkg);
   const isDir = fs.statSync(fullPath).isDirectory();
 
   if (isDir && hasCommand(fullPath)) {
     shell.cd(fullPath);
     shell.exec(`${cliTool} ${command}`);
+    shell.cd(WORKING_DIR);
   }
 });
 
