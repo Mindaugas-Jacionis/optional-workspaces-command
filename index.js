@@ -6,12 +6,12 @@ const { argv } = require('yargs');
 var commandExists = require('command-exists');
 
 const timestamp = Date.now();
-const command = argv._[0] || argv.command;
+const command = argv._[0] || argv.command || argv.c;
 const directory = argv._[1] || argv.directory || argv.dir || argv.d || 'packages';
 const cliTool = commandExists.sync('yarn') ? 'yarn' : 'npm run';
 
 if (!command) {
-  log.error('No command to run passed');
+  console.error('No command to run passed');
   shell.exit(1);
 }
 
