@@ -10,7 +10,8 @@
     "script",
     "conditional",
     "workspaces",
-    "monorepo"
+    "monorepo",
+    "cli"
   ],
   "bin": {
     "optional-workspace-command": "./index.js"
