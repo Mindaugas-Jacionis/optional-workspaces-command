@@ -5,21 +5,21 @@ This solution fills the gap as [`yarn`](https://yarnpkg.com/) will crash if at l
 
 #### Instal:
 
-`yarn add -D -W optional-workspace-command`
+`yarn add -D -W optional-workspaces-command`
 
 #### Usage:
 
 In your `package.json` scripts add:
 
 ```json
-  "build": "optional-workspace-command build"
+  "build": "optional-workspaces-command build"
 ```
 
 This will run command in all packages under `package/{package_dir}` optionally.
 In other words, if no `build` script found in `package.json` - dir is skipped.
 
 **Note:** You can also use script without installing via [`npx`](https://www.npmjs.com/package/npx):  
-`npx optional-workspace-command build`
+`npx optional-workspaces-command build`
 
 #### Options:
 
