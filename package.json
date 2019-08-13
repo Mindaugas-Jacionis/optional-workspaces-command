@@ -14,7 +14,8 @@
     "cli"
   ],
   "bin": {
-    "optional-workspace-command": "./index.js"
+    "optional-workspace-command": "./index.js",
+    "optional-workspaces-command": "./index.js"
   },
   "author": "Mindaugas Jačionis",
   "license": "MIT",
