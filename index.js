@@ -5,17 +5,19 @@ const shell = require('shelljs');
 const { argv } = require('yargs');
 var commandExists = require('command-exists');
 
+const log = require('./utils/log');
+
 const timestamp = Date.now();
 const command = argv._[0] || argv.command || argv.c;
 const directory = argv._[1] || argv.directory || argv.dir || argv.d || 'packages';
 const cliTool = commandExists.sync('yarn') ? 'yarn' : 'npm run';
 
 if (!command) {
-  console.error('No command to run passed');
+  log.error('No command to run passed');
   shell.exit(1);
 }
 
-console.log(`Starting optionaly run "${command}" command for all workspaces in ${directory} 🏎️`);
+log.info(`Starting optionaly run "${command}" command for all workspaces in ${directory} 🏎️`);
 
 const WORKING_DIR = path.resolve('./');
 const packages = fs.readdirSync(directory);
@@ -45,7 +47,7 @@ packages.forEach(pkg => {
   }
 });
 
-console.log(
+log.info(
   `Finish optional ${command} command of all ${directory} workspaces in ${(Date.now() - timestamp) /
     1000}s 🏁`,
 );
