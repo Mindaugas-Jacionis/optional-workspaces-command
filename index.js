@@ -5,12 +5,17 @@ const shell = require('shelljs');
 const { argv } = require('yargs');
 var commandExists = require('command-exists');
 
-const log = require('./utils/log');
+const { log, deprecationWarning } = require('./utils');
 
 const timestamp = Date.now();
 const command = argv._[0] || argv.command || argv.c;
 const directory = argv._[1] || argv.directory || argv.dir || argv.d || 'packages';
 const cliTool = commandExists.sync('yarn') ? 'yarn' : 'npm run';
+
+const TO_BE_DEPRECATED = 'optional-workspace-command';
+const CORRECT_BIN_COMMAND = 'optional-workspaces-command';
+// extracting cli command that has been used from argv
+const runningBinCommand = argv.$0.split('/.bin/')[1];
 
 if (!command) {
   log.error('No command to run passed');
@@ -51,3 +56,7 @@ log.info(
   `Finish optional ${command} command of all ${directory} workspaces in ${(Date.now() - timestamp) /
     1000}s 🏁`,
 );
+
+if (runningBinCommand === TO_BE_DEPRECATED) {
+  deprecationWarning(TO_BE_DEPRECATED, CORRECT_BIN_COMMAND);
+}
