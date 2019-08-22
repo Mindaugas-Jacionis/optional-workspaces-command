@@ -23,7 +23,7 @@
     "command-exists": "^1.2.8",
     "fs-extra": "^8.1.0",
     "shelljs": "^0.8.3",
-    "yargs": "^13.3.0"
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "release-it": "^12.3.5"
