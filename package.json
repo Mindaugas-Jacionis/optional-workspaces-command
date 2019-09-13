@@ -3,7 +3,9 @@
   "version": "0.3.0",
   "description": "Optionally runs command in monorepo workspace directory",
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "clean-git": "git branch --merged master --no-color | grep -v master | grep -v stable | xargs git branch -d",
+    "clean-yarn": "rm -rf node_modules && yarn cache clean && yarn"
   },
   "keywords": [
     "yarn",
