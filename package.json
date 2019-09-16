@@ -7,6 +7,9 @@
     "clean-git": "git branch --merged master --no-color | grep -v master | grep -v stable | xargs git branch -d",
     "clean-yarn": "rm -rf node_modules && yarn cache clean && yarn"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "keywords": [
     "yarn",
     "script",
