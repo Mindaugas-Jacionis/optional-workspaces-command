@@ -1,6 +1,6 @@
 {
   "name": "optional-workspaces-command",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Optionally runs command in monorepo workspace directory",
   "scripts": {
     "release": "release-it",
