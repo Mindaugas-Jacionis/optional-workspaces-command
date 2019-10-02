@@ -26,5 +26,5 @@ In other words, if no `build` script found in `package.json` - dir is skipped.
 - `--command`, `-cmd`, `-c` - command to run optionally. Also this can be passed as first flagless param.
 - `--directory`, `-dir`, `-d` - relative path to workspaces directory.
   If not passed, it will use `packages` as a default value.
-  **Multiple directories are supported, simply use the same falg multiple times, i.e.:
-  `optional-workspaces-command build -dir=packages -dir=workspaces`**
+  **Multiple directories are supported, simply use the falg(-s) multiple times (you can mix flags), i.e.:
+  `optional-workspaces-command build -dir=packages -d=workspaces`**
