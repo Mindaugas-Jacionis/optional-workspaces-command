@@ -32,6 +32,6 @@
     "yargs": "^14.0.0"
   },
   "devDependencies": {
-    "release-it": "^12.3.5"
+    "release-it": "^14.0.2"
   }
 }
