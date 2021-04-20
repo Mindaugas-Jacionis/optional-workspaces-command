@@ -25,13 +25,13 @@
   "author": "Mindaugas Jačionis",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "command-exists": "^1.2.8",
-    "fs-extra": "^8.1.0",
-    "shelljs": "^0.8.3",
-    "yargs": "^14.0.0"
+    "chalk": "^4.1.0",
+    "command-exists": "^1.2.9",
+    "fs-extra": "^9.1.0",
+    "shelljs": "^0.8.4",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
-    "release-it": "^12.3.5"
+    "release-it": "^14.6.1"
   }
 }
